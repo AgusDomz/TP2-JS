@@ -337,11 +337,44 @@ let numero = parseInt(prompt("Ingresa un numero."));
 
 14- Realiza un script que pida una cadena de texto y lo muestre poniendo el signo – entre cada carácter sin usar el método replace. Por ejemplo, si tecleo “hola qué tal”, deberá salir “h-o-l-a- -q-u-e- -t-a-l”.
 
+
+	let cadenaTexto = prompt(`ingresar una cadena de texto:`);
+	let salidaTexto="";
+
+	for (let i = 0; i < cadenaTexto.length; i++) {
+		if (i == 0) {
+			salidaTexto = cadenaTexto[i];
+		} else {
+			salidaTexto = salidaTexto + "-" + cadenaTexto[i];
+		}
+	}
+	console.log(salidaTexto);
+
+
 */
 //-----------------------------------------------------------------------------------
 /*
 
 15- Realiza un script que cuente el número de vocales que tiene un texto.
+
+
+	let texto = prompt("Ingrese un texto!"); 
+	let vocales = ['a', 'e', 'i', 'o', 'u'];
+	let contador = 0;
+
+	texto = texto.toLowerCase();
+
+	// .toLowerCase() convierte una cadena en letras minusculas
+
+	for (let i = 0; i < texto.length; i++) {
+		if (vocales.includes(texto[i])) { // array.includes da true si una cadena contiene una cadena especificada.
+		contador++;
+		}
+	}
+
+	console.log("El número de vocales en el texto es: " + contador);
+
+
 
 */
 //-----------------------------------------------------------------------------------
@@ -349,16 +382,51 @@ let numero = parseInt(prompt("Ingresa un numero."));
 
 16- Realiza un script que pida una cadena de texto y la devuelva al revés. Es decir, si tecleo “hola que tal” deberá mostrar “lat euq aloh”.
 
+
+	let texto = prompt("Ingresa un texto!");
+	let textoAlReves = "";
+
+	for (let i = texto.length - 1; i >= 0; i--) {
+		textoAlReves += texto[i];
+	}
+
+	console.log(textoAlReves);
+
+	// texto.length devuelve la longitud de una cadena, si agregamos el -1 iremos al final de la misma.
+
+
 */
 //-----------------------------------------------------------------------------------
 /*
 
 17- Realiza un script que muestre la posición de la primera vocal de un texto introducido por teclado.
 
-let texto = prompt("introduce un texto.");
-	console.log("La primera vocal esta en la posicion: " + texto.indexOf("a", "e", "i", "o", "u"));
-*/
 
-	
+	let texto = prompt("Ingrese un texto!");
+
+	texto = texto.toLowerCase();
+
+	let posicion = -1; // Valor inicial para indicar que no se encontró ninguna vocal
+
+	for (let i = 0; i < texto.length; i++) {
+
+		let vocales = texto[i];
+		
+		if (vocales === "a" || vocales === "e" || vocales === "i" || vocales === 	"o" || vocales === "u") {
+
+	    posicion = i + 1; // Se agrega 1 para mostrar la posición con base 1 en lugar de 	base 0
+
+		break;
+		}
+	}
+
+
+	if (posicion !== -1) {
+		console.log("La primera vocal se encuentra en la posición " + posicion);
+	} else {
+		console.log("No se encontró ninguna vocal en el texto ingresado.");
+	}
+
+*/
 //-----------------------------------------------------------------------------------
 
